@@ -1,0 +1,27 @@
+{
+  "name": "sync-database",
+  "version": "1.0.0",
+  "description": "Program to make a syncronization of two diferents database in ruuning",
+  "main": "index.ts",
+  "scripts": {
+    "pull:dev": "dotenv -e .env.dev -- npx prisma db pull",
+    "pull:prod": "dotenv -e .env.prod -- npx prisma db pull",
+    "push:dev": "dotenv -e .env.dev -- npx prisma migrate dev",
+    "push:prod": "dotenv -e .env.prod -- npx prisma migrate dev",
+    "status:dev": "dotenv -e .env.dev -- npx prisma migrate statusd",
+    "status:prod": "dotenv -e .env.prod -- npx prisma migrate status"
+  },
+  "keywords": [
+    "postgres",
+    "pg",
+    "database",
+    "sync-database"
+  ],
+  "author": "Gabriel Paz Dos Santos - heiwa.gabriel@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.14.0",
+    "dotenv-cli": "^5.1.0",
+    "prisma": "^3.14.0"
+  }
+}
